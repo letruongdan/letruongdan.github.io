@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BizBot — AI Telegram Chatbot for Your Business</title>
+    <meta name="description" content="Get your own AI-powered Telegram chatbot. Handles FAQs, captures leads, books appointments — 24/7. No coding needed. Starting at $79.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f1a; color: #e0e0e0; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        
+        header { text-align: center; padding: 80px 0 40px; background: linear-gradient(135deg, #1a1a3e 0%, #0f0f1a 100%); }
+        header h1 { font-size: 3em; color: #fff; margin-bottom: 10px; }
+        header h1 span { background: linear-gradient(90deg, #7c3aed, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        header p { font-size: 1.3em; color: #94a3b8; max-width: 600px; margin: 0 auto; }
+        
+        .bot-demo { text-align: center; margin: 40px auto; }
+        .bot-demo a { display: inline-block; background: linear-gradient(90deg, #7c3aed, #3b82f6); color: #fff; padding: 16px 40px; border-radius: 50px; text-decoration: none; font-size: 1.2em; font-weight: 600; transition: transform 0.2s; }
+        .bot-demo a:hover { transform: scale(1.05); }
+        
+        .features { padding: 60px 0; }
+        .features h2 { text-align: center; font-size: 2em; margin-bottom: 40px; color: #fff; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .feature-card { background: #1a1a2e; padding: 30px; border-radius: 12px; border: 1px solid #2a2a4a; }
+        .feature-card .icon { font-size: 2em; margin-bottom: 10px; }
+        .feature-card h3 { color: #fff; margin-bottom: 8px; }
+        .feature-card p { color: #94a3b8; font-size: 0.95em; }
+        
+        .pricing { padding: 60px 0; background: #0a0a1a; }
+        .pricing h2 { text-align: center; font-size: 2em; margin-bottom: 40px; color: #fff; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .plan { background: #1a1a2e; padding: 30px; border-radius: 12px; border: 1px solid #2a2a4a; text-align: center; }
+        .plan.featured { border-color: #7c3aed; transform: scale(1.05); position: relative; }
+        .plan.featured::before { content: "BEST VALUE"; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #7c3aed; color: #fff; padding: 4px 16px; border-radius: 20px; font-size: 0.8em; font-weight: 700; }
+        .plan .name { font-size: 1.2em; color: #fff; margin-bottom: 5px; }
+        .plan .price { font-size: 2.5em; font-weight: 700; color: #fff; margin: 10px 0; }
+        .plan .price span { font-size: 0.4em; color: #94a3b8; }
+        .plan ul { list-style: none; text-align: left; margin: 20px 0; }
+        .plan ul li { padding: 6px 0; color: #94a3b8; }
+        .plan ul li::before { content: "✅ "; }
+        .plan .btn { display: inline-block; background: linear-gradient(90deg, #7c3aed, #3b82f6); color: #fff; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+        
+        .how-it-works { padding: 60px 0; }
+        .how-it-works h2 { text-align: center; font-size: 2em; margin-bottom: 40px; color: #fff; }
+        .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
+        .step { text-align: center; padding: 20px; }
+        .step .num { width: 50px; height: 50px; background: linear-gradient(90deg, #7c3aed, #3b82f6); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5em; font-weight: 700; margin: 0 auto 15px; color: #fff; }
+        .step h3 { color: #fff; margin-bottom: 5px; }
+        .step p { color: #94a3b8; font-size: 0.9em; }
+        
+        .cta { text-align: center; padding: 60px 0; background: linear-gradient(135deg, #1a1a3e 0%, #0f0f1a 100%); }
+        .cta h2 { font-size: 2em; margin-bottom: 20px; color: #fff; }
+        .cta p { color: #94a3b8; max-width: 500px; margin: 0 auto 30px; }
+        .cta a { display: inline-block; background: linear-gradient(90deg, #7c3aed, #3b82f6); color: #fff; padding: 16px 50px; border-radius: 50px; text-decoration: none; font-size: 1.3em; font-weight: 700; }
+        
+        footer { text-align: center; padding: 30px; color: #4a4a6a; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🤖 <span>BizBot</span></h1>
+            <p>Your AI-powered Telegram chatbot. Works 24/7. Handles customers. Captures leads. No coding needed.</p>
+        </div>
+    </header>
+
+    <div class="bot-demo">
+        <a href="https://t.me/BizBot_Assistant_bot" target="_blank">👉 Try the Live Demo on Telegram</a>
+    </div>
+
+    <section class="features">
+        <div class="container">
+            <h2>What BizBot Does For You</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="icon">💬</div>
+                    <h3>24/7 Customer Support</h3>
+                    <p>Answers FAQs instantly. Never misses a message. Your customers get help anytime.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🎯</div>
+                    <h3>Lead Capture</h3>
+                    <p>Automatically collects name, phone, and needs. Every conversation becomes a qualified lead.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📅</div>
+                    <h3>Appointment Booking</h3>
+                    <p>Customers book appointments directly through chat. No phone tag. No missed opportunities.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🌐</div>
+                    <h3>Multi-Language</h3>
+                    <p>Auto-detects English and Vietnamese. Communicate with customers in their language.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🔄</div>
+                    <h3>Human Handoff</h3>
+                    <p>When AI can't help, seamlessly transfer to your team. Best of both worlds.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">⚡</div>
+                    <h3>Fast Setup</h3>
+                    <p>Your bot is ready in 1-2 days. Just send your business info. I handle the rest.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="num">1</div>
+                    <h3>Order & Pay</h3>
+                    <p>Choose your plan and pay via PayPal</p>
+                </div>
+                <div class="step">
+                    <div class="num">2</div>
+                    <h3>Send Info</h3>
+                    <p>Share your business details and FAQs</p>
+                </div>
+                <div class="step">
+                    <div class="num">3</div>
+                    <h3>I Build</h3>
+                    <p>I create your custom AI chatbot (1-2 days)</p>
+                </div>
+                <div class="step">
+                    <div class="num">4</div>
+                    <h3>Go Live</h3>
+                    <p>Start getting leads and saving time immediately</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing">
+        <div class="container">
+            <h2>Simple Pricing</h2>
+            <div class="pricing-grid">
+                <div class="plan">
+                    <div class="name">Basic</div>
+                    <div class="price">$79 <span>one-time</span></div>
+                    <ul>
+                        <li>10 FAQ topics + knowledge base</li>
+                        <li>5 custom commands</li>
+                        <li>Lead capture (name, phone, notes)</li>
+                        <li>2-day delivery</li>
+                        <li>1 revision</li>
+                    </ul>
+                    <a class="btn" href="https://paypal.me/danc3vh/79">Buy Now</a>
+                </div>
+                <div class="plan featured">
+                    <div class="name">Standard</div>
+                    <div class="price">$149 <span>one-time</span></div>
+                    <ul>
+                        <li>Everything in Basic</li>
+                        <li>30 FAQ topics</li>
+                        <li>Appointment booking</li>
+                        <li>Human handoff</li>
+                        <li>Demo testing</li>
+                        <li>3-day delivery + 3 revisions</li>
+                    </ul>
+                    <a class="btn" href="https://paypal.me/danc3vh/149">Buy Now</a>
+                </div>
+                <div class="plan">
+                    <div class="name">Premium</div>
+                    <div class="price">$299 <span>one-time</span></div>
+                    <ul>
+                        <li>Everything in Standard</li>
+                        <li>Multi-language support</li>
+                        <li>Priority 24h delivery</li>
+                        <li>Source code documentation</li>
+                        <li>3 months free maintenance</li>
+                        <li>Unlimited revisions</li>
+                    </ul>
+                    <a class="btn" href="https://paypal.me/danc3vh/299">Buy Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Automate Your Business?</h2>
+            <p>Try the live bot first. See how it works. Then order your own customized version.</p>
+            <a href="https://t.me/BizBot_Assistant_bot" target="_blank">👉 Try BizBot Now</a>
+            <br><br>
+            <p style="font-size:0.9em; color:#666;">Questions? Contact me on Telegram: @anhdanvip</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>BizBot — AI Chatbots for Small Businesses | Built with ❤️</p>
+    </footer>
+</body>
+</html>
